@@ -223,11 +223,11 @@ app.post('/loggingin', async (req, res) => {
 
     console.log(result);
 
-    // if (result.length !=1) {
-    // 	console.log("user not found");
-    // 	res.send("User not found.<br/><br/> <a href='/login'>Try again</a>");
-    // 	return;
-    // }
+    if (result.length !=1) {
+    	console.log("user not found");
+    	res.send("User not found.<br/><br/> <a href='/login'>Try again</a>");
+    	return;
+    }
     if (await bcrypt.compare(password, result[0].password)) {
         console.log("correct password");
         req.session.authenticated = true;
