@@ -1,0 +1,31 @@
+<%- include("templates/header") %>
+
+<% if (errorMessage) { %>
+    <%= errorMessage %>
+    <br/><br/> <a href='/login'>Try again</a>
+<%} else { %>
+
+
+<main class="form-signin w-25 m-auto text-center my-auto">
+    <h1 class="h3 mb-3 fw-normal">Log in</h1>
+  <form action="/loggingin" method="post">
+    <div class="form-floating">
+      <input name='email' type="text" class="form-control" id="floatingInput" placeholder="Email Address">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input name='password' type='text' class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+  </form>
+</main>
+
+<% } %>
+<%- include("templates/footer") %>

@@ -1,0 +1,22 @@
+<%- include("templates/header") %>
+
+<% if (username) { %>
+   <h1> Hello, <%= username %>!</h1> <br/>
+    <form action='/members' method='get'>
+        <button type="submit" class="btn btn-success">Go to Members area</button>
+    </form>
+    <form action ='/logout' method='get'>
+        <button type="submit" class="btn btn-warning">Log out</button>
+    </form> 
+<% } else { %>
+    <form action='/signup' method='get'>
+        <button type="submit" class="btn btn-success">Sign up</button>
+    </form>
+    <form action='/login' method='get'>
+        <button type="submit" class="btn btn-warning">Log in</button>
+    </form>
+<% } %>
+
+
+<%- include("templates/footer") %>
+

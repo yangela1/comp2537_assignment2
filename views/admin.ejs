@@ -1,0 +1,24 @@
+<%- include("templates/header") %>
+
+<h1>Users</h1>
+<ol>
+    <% let i=0; %>
+    <% for(i=0; i < users.length; i++) { %>
+        
+         <%- include('templates/user', {user: users[i]}) %> 
+        <form action="/promoteUser" method="post">
+            <input type="hidden" name="userID" value="<%= users[i]._id%>">
+            <button type="submit" class="btn btn-danger">Promote to Admin</button> 
+        </form>
+
+        <form action="/demoteUser" method="post">
+            <input type="hidden" name="userID" value="<%= users[i]._id%>">
+            <button type="submit" class="btn btn-success">Demote to User</button>
+        </form>
+        
+    <% } %> 
+</ol>
+
+
+
+<%- include("templates/footer") %>

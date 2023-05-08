@@ -1,0 +1,23 @@
+<%- include("templates/header") %>
+
+<p style="font-size: 35px;"><b>Hello <%= username %>!</b></p>
+
+<div class="row">
+    <div class="col">
+        <img src='/cat1.gif' style='width:300px;'> 
+    </div>
+    <div class="col">
+        <img src='/cat2.gif' style='width:300px;'>
+    </div>
+    <div class="col">
+        <img src='/cat3.gif' style='width:300px;'>
+    </div>
+  </div>
+
+<form action = '/logout' method='get'>
+    <button type="submit" class="btn btn-warning">Log out</button>
+</form>
+
+
+
+<%- include("templates/footer") %>
